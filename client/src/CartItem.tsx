@@ -27,7 +27,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
                 productID
             }          
         
-            fetch(`${process.env.REACT_APP_SERVER_URL}/cart/remove`, {
+            fetch(`/cart/remove`, {
                     method: 'PUT',
                     body: JSON.stringify(data),
                     headers: {

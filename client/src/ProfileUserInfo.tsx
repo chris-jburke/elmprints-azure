@@ -48,7 +48,7 @@ const ProfileUserInfo: React.FC<ProfileUserInfoProps> = (props) => {
 				zipcode: props.user.billingAddress.zipcode
 			}
 
-			fetch(`${process.env.REACT_APP_SERVER_URL}/auth/profile/sameshipping`, {
+			fetch(`/auth/profile/sameshipping`, {
 				method: 'PUT',
 				body: JSON.stringify(data),
 				headers: {

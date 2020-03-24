@@ -32,7 +32,7 @@ const ProfileAddressForm: React.FC<AddressProps> = (props) => {
 			state,
 			zipcode
 		}
-		fetch(`${process.env.REACT_APP_SERVER_URL}/auth/profile/${addressType}`, {
+		fetch(`/auth/profile/${addressType}`, {
 			method: 'PUT',
 			body: JSON.stringify(data),
 			headers: {

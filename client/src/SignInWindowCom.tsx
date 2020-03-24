@@ -41,7 +41,7 @@ const SignInWindowCom: React.FC<SigninProps> = (props) => {
 			email,
 			password
 		}
-		fetch(`${process.env.REACT_APP_SERVER_URL}/auth/login`, {
+		fetch(`/auth/login`, {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {

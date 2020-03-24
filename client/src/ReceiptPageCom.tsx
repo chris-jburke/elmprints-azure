@@ -24,7 +24,7 @@ const ReceiptPageCom: React.FC<ReceiptPageComProps> = (props) => {
                   email,
                   cartID
                 }
-                fetch(`${process.env.REACT_APP_SERVER_URL}/cart/delete`, {
+                fetch(`/cart/delete`, {
                 method: 'PUT',
                 body: JSON.stringify(data),
                 headers: {

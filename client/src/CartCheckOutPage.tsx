@@ -113,7 +113,7 @@ const CartCheckOutPage: React.FC<CartCheckOutPageProps> = (props) => {
  			cartContent
  		}
  	
- 	fetch(`${process.env.REACT_APP_SERVER_URL}/cart/purchased`, {
+ 	fetch(`/cart/purchased`, {
  		method: 'PUT',
  		body: JSON.stringify(data),
  		headers: {
@@ -141,7 +141,7 @@ const CartCheckOutPage: React.FC<CartCheckOutPageProps> = (props) => {
           cartID
         }          
             
-        fetch(`${process.env.REACT_APP_SERVER_URL}/cart/delete`, {
+        fetch(`/cart/delete`, {
           method: 'PUT',
           body: JSON.stringify(data),
           headers: {
@@ -179,7 +179,7 @@ const CartCheckOutPage: React.FC<CartCheckOutPageProps> = (props) => {
       }
     }
     if (props.user?.shoppingCart != null) {
-      const data: AxiosResponse<any> = await axios.post(`${process.env.REACT_APP_SERVER_URL}/cart/payment/cart`,
+      const data: AxiosResponse<any> = await axios.post(`/cart/payment/cart`,
       { cart: [...props.user.shoppingCart]})
     
     console.log(data.data.client_secret)

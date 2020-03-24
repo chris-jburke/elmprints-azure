@@ -119,7 +119,7 @@ const PosterDetail: React.FC<ProductProps> = (props) => {
             imageID,
             sourceID
           }
-          fetch(`${process.env.REACT_APP_SERVER_URL}/cart`, {
+          fetch(`/cart`, {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
@@ -161,7 +161,7 @@ const PosterDetail: React.FC<ProductProps> = (props) => {
             imageID,
             sourceID
           }
-          fetch(`${process.env.REACT_APP_SERVER_URL}/cart`, {
+          fetch(`/cart`, {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
