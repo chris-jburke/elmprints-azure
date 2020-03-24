@@ -1,4 +1,5 @@
 // Require needed packages
+let path = require('path')
 require('dotenv').config()
 let cors = require('cors')
 let express = require('express')
@@ -11,6 +12,7 @@ let app = express()
 let rowdyResults = rowdyLogger.begin(app)
 
 // Set up middleware
+app.use(express.static(path.join(__dirname, 'client/build')))
 app.use(morgan('dev'))
 app.use(cors())
 app.use(express.urlencoded({ extended: false })) // Accept form data
@@ -43,9 +45,9 @@ app.get('/faq', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.status(404).send({ message: 'Not Found' })
+  res.sendFile(path.join(__dirname, '/client/build/index.html'))
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT, () => {
   rowdyResults.print()
 })
